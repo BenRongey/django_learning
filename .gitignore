@@ -1,2 +1,3 @@
 venv/*
 .vscode/*
+mysite/polls/__pycache__/*
