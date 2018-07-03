@@ -3,14 +3,13 @@ from django.http import HttpResponse
 from django.http import HttpRequest
 
 def index(request):
-    query = request.GET.get('name')
-    message = "Hello {}, I'm learning Django.".format(query)
-    return HttpResponse(message)
+    new_url_response = (request.META['HTTP_HOST'] + request.path +'?first_name=' + request.GET['name'])
+    return HttpResponse(new_url_response)
 
 
 
-    # print(request.path)
-    # print(request.META['HTTP_HOST'])
+    
+    
     # print(HttpRequest.get_full_path)
     # if request.method == 'GET':
     #     return HttpResponse("Hello World")
