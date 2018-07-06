@@ -1,11 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.http import HttpRequest
+from django.shortcuts import redirect
 
 def index(request):
-    new_url_response = (request.META['HTTP_HOST'] + request.path +'?first_name=' + request.GET['name'])
-    return HttpResponse(new_url_response)
-
+    p_id = request.GET['pid']
+    m_id = request.GET['mid']
+    monitorId = p_id
+    enqId = m_id
+    # new_url_response = (request.META['HTTP_HOST'] + request.path +'?first_name=' + request.GET['name'])
+    # return HttpResponse(new_url_response)
+    return redirect(request.META['HTTP_HOST'])
 
 
     
