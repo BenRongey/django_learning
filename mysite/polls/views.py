@@ -3,13 +3,16 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 
 def index(request):
-    p_id = request.GET['pid']
-    m_id = request.GET['mid']
-    monitorId = p_id
-    enqId = m_id
+    # p_id = request.GET['pid']
+    # m_id = request.GET['mid']
+    # monitorId = p_id
+    # enqId = m_id
     # new_url_response = (request.META['HTTP_HOST'] + request.path +'?first_name=' + request.GET['name'])
-    # return HttpResponse(new_url_response)
-    return redirect(request.META['HTTP_HOST'])
+    # return HttpResponse("YO")
+
+    response = redirect('https://google.com')
+    response['Location'] += '/maps'
+    return response
 
 
     
